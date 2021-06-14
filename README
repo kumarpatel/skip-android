@@ -1,0 +1,13 @@
+
+# Android Studio
+ Git clone project
+ Open project in Android Studio
+Hit play
+
+
+# CLI
+Git clone project
+From project dir, `./gradlew clean installDebug`
+Then open "skip-android" on device
+
+
