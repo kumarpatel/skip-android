@@ -3,25 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/RestaurantListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.skip_android.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/RestaurantListFragment"
+        android:name="com.example.skip_android.RestaurantListFragment"
+        android:label="RestaurantListFragment"
+        tools:layout="@layout/fragment_restaurant_list">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:popUpToInclusive="true"
-            app:destination="@id/SecondFragment"
-            app:popUpTo="@id/SecondFragment" />
+            android:id="@+id/action_RestaurantListFragment_to_RestaurantDetailFragment"
+            app:destination="@id/RestaurantDetailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/RestaurantListFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.skip_android.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/RestaurantDetailFragment"
+        android:name="com.example.skip_android.RestaurantDetailFragment"
+        android:label="RestaurantDetailFragment"
+        tools:layout="@layout/fragment_restaurant_detail">
         <argument
             android:name="restaurant"
             app:argType="com.example.skip_android.Restaurant" />

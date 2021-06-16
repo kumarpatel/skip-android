@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".RestaurantListFragment">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +27,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/searchInput"
                     android:layout_width="262dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/outcode"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -39,12 +40,20 @@
                 app:backgroundTint="#F36D00" />
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipeRefreshRestaurants"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="167dp"
-            tools:layout_editor_absoluteY="138dp" />
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="167dp"
+                tools:layout_editor_absoluteY="138dp" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 
